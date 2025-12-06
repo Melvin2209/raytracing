@@ -1,0 +1,22 @@
+# Test scene for shadows
+size 400 400
+camera 0 2 5 0 0 0 0 1 0 45
+output test_shadows.png
+
+ambient 0.1 0.1 0.1
+diffuse 0.8 0.2 0.2
+specular 0.5 0.5 0.5
+shininess 20
+
+# Point light above and to the side
+point 3 5 3 1 1 1
+
+# Sphere on the ground
+sphere 0 0.5 0 0.5
+
+# Ground plane would be nice but let's use a large sphere for now
+diffuse 0.3 0.3 0.3
+specular 0.1 0.1 0.1
+sphere 0 -100 0 99.5
+
+maxdepth 3
