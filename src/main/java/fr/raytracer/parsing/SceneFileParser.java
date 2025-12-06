@@ -1,4 +1,3 @@
-// ========== SceneFileParser.java ==========
 package fr.raytracer.parsing;
 
 import fr.raytracer.geometry.Point;
@@ -15,12 +14,25 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parse un fichier de scène et construit un objet Scene.
+ */
 public class SceneFileParser {
+    /** Liste des vertices lus. */
     private List<Point> vertices = new ArrayList<>();
+    /** Couleur diffuse courante. */
     private Color currentDiffuse = new Color(0, 0, 0);
+    /** Couleur spéculaire courante. */
     private Color currentSpecular = new Color(0, 0, 0);
+    /** Brillance courante. */
     private double currentShininess = 1.0;
 
+    /**
+     * Parse un fichier de scène.
+     * @param filename le chemin du fichier
+     * @return la scène construite
+     * @throws IOException en cas d'erreur de lecture
+     */
     public Scene parse(String filename) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get(filename));
         
@@ -186,6 +198,11 @@ public class SceneFileParser {
         return scene;
     }
     
+    /**
+     * Parse les paramètres de la caméra.
+     * @param parts les parties de la ligne
+     * @return la caméra configurée
+     */
     private Camera parseCamera(String[] parts) {
         Point lookFrom = new Point(
             Double.parseDouble(parts[1]),

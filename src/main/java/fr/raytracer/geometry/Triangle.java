@@ -4,10 +4,28 @@ package fr.raytracer.geometry;
 import fr.raytracer.imaging.Color;
 import java.util.Optional;
 
+/**
+ * Représente un triangle 3D défini par trois sommets.
+ */
 public class Triangle extends Shape {
-    private Point v0, v1, v2;
+    /** Sommet 0. */
+    private Point v0;
+    /** Sommet 1. */
+    private Point v1;
+    /** Sommet 2. */
+    private Point v2;
+    /** Normale précalculée du triangle. */
     private Vector normal;
 
+    /**
+     * Crée un triangle.
+     * @param v0 premier sommet
+     * @param v1 deuxième sommet
+     * @param v2 troisième sommet
+     * @param diffuse couleur diffuse
+     * @param specular couleur spéculaire
+     * @param shininess brillance
+     */
     public Triangle(Point v0, Point v1, Point v2, Color diffuse, Color specular, double shininess) {
         super(diffuse, specular, shininess);
         this.v0 = v0;
@@ -20,9 +38,13 @@ public class Triangle extends Shape {
         this.normal = edge1.cross(edge2).normalize();
     }
 
+    /**
+     * Calcule l'intersection avec un rayon (algorithme de Möller-Trumbore).
+     * @param ray le rayon
+     * @return l'intersection si elle existe
+     */
     @Override
     public Optional<Intersection> intersect(Ray ray) {
-        // Algorithme de Möller-Trumbore pour l'intersection rayon-triangle
         final double EPSILON = 1e-8;
         
         Vector edge1 = v1.subtract(v0);
@@ -56,7 +78,7 @@ public class Triangle extends Shape {
         // Calculer t pour trouver le point d'intersection
         double t = f * edge2.dot(q);
         
-        // Intersection valide seulement si t > epsilon (pas derrière la caméra)
+        // Intersection valide seulement si t > epsilon
         if (t > EPSILON) {
             Point hitPoint = ray.pointAt(t);
             return Optional.of(new Intersection(t, hitPoint, normal, this));
@@ -65,6 +87,11 @@ public class Triangle extends Shape {
         return Optional.empty();
     }
 
+    /**
+     * Retourne la normale du triangle (constante sur toute la surface).
+     * @param point le point (ignoré)
+     * @return la normale
+     */
     @Override
     public Vector getNormalAt(Point point) {
         return normal;

@@ -4,16 +4,34 @@ package fr.raytracer.geometry;
 import fr.raytracer.imaging.Color;
 import java.util.Optional;
 
+/**
+ * Représente une sphère 3D.
+ */
 public class Sphere extends Shape {
+    /** Centre de la sphère. */
     private Point center;
+    /** Rayon de la sphère. */
     private double radius;
 
+    /**
+     * Crée une sphère.
+     * @param center le centre
+     * @param radius le rayon
+     * @param diffuse la couleur diffuse
+     * @param specular la couleur spéculaire
+     * @param shininess la brillance
+     */
     public Sphere(Point center, double radius, Color diffuse, Color specular, double shininess) {
         super(diffuse, specular, shininess);
         this.center = center;
         this.radius = radius;
     }
 
+    /**
+     * Calcule l'intersection avec un rayon.
+     * @param ray le rayon
+     * @return l'intersection si elle existe
+     */
     @Override
     public Optional<Intersection> intersect(Ray ray) {
         Vector oc = ray.getOrigin().subtract(center);
@@ -45,6 +63,11 @@ public class Sphere extends Shape {
         return Optional.of(new Intersection(t, hitPoint, normal, this));
     }
 
+    /**
+     * Retourne la normale à la surface de la sphère.
+     * @param point le point
+     * @return la normale
+     */
     @Override
     public Vector getNormalAt(Point point) {
         Vector normal = point.subtract(center);

@@ -7,8 +7,15 @@ import fr.raytracer.raytracer.ImageRenderer;
 import fr.raytracer.raytracer.Scene;
 import java.awt.image.BufferedImage;
 
+/**
+ * Point d'entrée du raytracer.
+ */
 public class Main {
     
+    /**
+     * Méthode principale.
+     * @param args arguments : fichier de scène, [profondeur max]
+     */
     public static void main(String[] args) {
         if (args.length < 1) {
             System.err.println("Usage: java -jar raytracer.jar <scene_file> [maxdepth]");

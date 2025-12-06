@@ -6,20 +6,42 @@ import fr.raytracer.geometry.*;
 import fr.raytracer.lighting.AbstractLight;
 import java.util.Optional;
 
+/**
+ * Moteur de raytracing qui calcule la couleur de chaque pixel.
+ */
 public class RayTracer {
+    /** Scène à rendre. */
     private Scene scene;
+    /** Profondeur maximale de récursion. */
     private int maxDepth;
 
+    /**
+     * Crée un raytracer.
+     * @param scene la scène
+     * @param maxDepth la profondeur maximale de réflexion
+     */
     public RayTracer(Scene scene, int maxDepth) {
         this.scene = scene;
         this.maxDepth = maxDepth;
     }
 
+    /**
+     * Calcule la couleur d'un pixel.
+     * @param i colonne du pixel
+     * @param j ligne du pixel
+     * @return la couleur du pixel
+     */
     public Color getPixelColor(int i, int j) {
         Ray ray = computeRay(i, j);
         return traceRay(ray, 0);
     }
 
+    /**
+     * Calcule le rayon partant de la caméra pour un pixel donné.
+     * @param i colonne
+     * @param j ligne
+     * @return le rayon
+     */
     private Ray computeRay(int i, int j) {
         Camera camera = scene.getCamera();
         Orthonormal ortho = camera.getOrthonormal();
@@ -28,13 +50,9 @@ public class RayTracer {
         double halfHeight = Math.tan(fovRadians / 2.0);
         double halfWidth = halfHeight * scene.getWidth() / scene.getHeight();
         
-        // Coordonnées normalisées de -0.5 à 0.5
         double u = (i + 0.5) / scene.getWidth() - 0.5;
         double v = (j + 0.5) / scene.getHeight() - 0.5;
         
-        // Calculer la direction du rayon
-        // u va de gauche (-) à droite (+)
-        // v va de haut (-) à bas (+), mais on veut inverser pour que Y pointe vers le haut
         Vector direction = ortho.getU().multiply(u * 2.0 * halfWidth)
                                 .add(ortho.getV().multiply(-v * 2.0 * halfHeight))
                                 .add(ortho.getW().negate())
@@ -43,14 +61,18 @@ public class RayTracer {
         return new Ray(camera.getLookFrom(), direction);
     }
 
+    /**
+     * Trace un rayon et retourne la couleur.
+     * @param ray le rayon
+     * @param depth la profondeur de récursion actuelle
+     * @return la couleur
+     */
     private Color traceRay(Ray ray, int depth) {
         Optional<Intersection> intersection = scene.findClosestIntersection(ray);
         
         if (!intersection.isPresent()) {
-            // Fond avec dégradé gris sombre (comme dans l'image cible)
             Vector unitDirection = ray.getDirection();
             double t = 0.5 * (unitDirection.getY() + 1.0);
-            // Dégradé de gris très sombre (0.05) à gris moyen (0.25)
             return new Color(0.05, 0.05, 0.05).multiply(1.0 - t)
                    .add(new Color(0.25, 0.25, 0.25).multiply(t));
         }
@@ -58,8 +80,14 @@ public class RayTracer {
         return computeColor(intersection.get(), ray, depth);
     }
 
+    /**
+     * Calcule la couleur au point d'intersection.
+     * @param intersection l'intersection
+     * @param ray le rayon incident
+     * @param depth la profondeur de récursion
+     * @return la couleur
+     */
     private Color computeColor(Intersection intersection, Ray ray, int depth) {
-        // Ambient light par défaut si la scène n'en a pas
         Color ambientLight = scene.getAmbient();
         if (ambientLight.getR() == 0 && ambientLight.getG() == 0 && ambientLight.getB() == 0) {
             ambientLight = new Color(0.15, 0.15, 0.15);
@@ -75,7 +103,6 @@ public class RayTracer {
         
         if (depth < maxDepth) {
             Color specular = intersection.getShape().getSpecular();
-            // Augmenter les reflets spéculaires pour un effet miroir plus marqué
             Color enhancedSpecular = new Color(
                 Math.min(1.0, specular.getR() * 1.5),
                 Math.min(1.0, specular.getG() * 1.5),
@@ -90,6 +117,13 @@ public class RayTracer {
         return finalColor;
     }
 
+    /**
+     * Calcule la contribution d'une lumière.
+     * @param intersection l'intersection
+     * @param light la lumière
+     * @param ray le rayon incident
+     * @return la couleur contribuée
+     */
     private Color computeLightContribution(Intersection intersection, AbstractLight light, Ray ray) {
         Vector normal = intersection.getNormal();
         Vector lightDir = light.getDirectionFrom(intersection.getPoint());
@@ -101,16 +135,22 @@ public class RayTracer {
                                    .multiply(diffuseFactor);
         
         Vector halfVector = lightDir.add(eyeDir).normalize();
-        // Augmenter l'exposant pour des reflets plus brillants et prononcés
         double shininess = intersection.getShape().getShininess();
         double specularFactor = Math.pow(Math.max(normal.dot(halfVector), 0), shininess * 1.2);
         Color specular = intersection.getShape().getSpecular()
                                     .multiply(light.getColor())
-                                    .multiply(specularFactor * 1.3); // Augmenter l'intensité des reflets
+                                    .multiply(specularFactor * 1.3);
         
         return diffuse.add(specular);
     }
 
+    /**
+     * Calcule la couleur de réflexion.
+     * @param intersection l'intersection
+     * @param ray le rayon incident
+     * @param depth la profondeur actuelle
+     * @return la couleur réfléchie
+     */
     private Color computeReflection(Intersection intersection, Ray ray, int depth) {
         Vector normal = intersection.getNormal();
         Vector incident = ray.getDirection();

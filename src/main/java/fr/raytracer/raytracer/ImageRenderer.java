@@ -4,8 +4,17 @@ package fr.raytracer.raytracer;
 import fr.raytracer.imaging.Color;
 import java.awt.image.BufferedImage;
 
+/**
+ * Effectue le rendu d'une scène en image.
+ */
 public class ImageRenderer {
     
+    /**
+     * Génère une image à partir d'une scène.
+     * @param scene la scène à rendre
+     * @param maxDepth la profondeur maximale de récursion (réflexions)
+     * @return l'image générée
+     */
     public BufferedImage render(Scene scene, int maxDepth) {
         int width = scene.getWidth();
         int height = scene.getHeight();
