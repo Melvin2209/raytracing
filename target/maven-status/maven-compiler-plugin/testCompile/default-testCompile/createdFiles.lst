@@ -1,0 +1,9 @@
+fr/raytracer/geometry/SphereTest.class
+fr/raytracer/geometry/VectorTest.class
+fr/raytracer/geometry/PointTest.class
+fr/raytracer/geometry/RayTest.class
+fr/raytracer/lighting/LightTest.class
+fr/raytracer/raytracer/CameraTest.class
+fr/raytracer/imaging/ColorTest.class
+fr/raytracer/raytracer/SceneTest.class
+fr/raytracer/geometry/TriangleTest.class

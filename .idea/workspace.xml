@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="27d409d8-52e7-4b82-b3dd-712a8a846bfa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/dragon3.png" beforeDir="false" afterPath="$PROJECT_DIR$/dragon3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/raytracer/parsing/SceneFileParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/raytracer/parsing/SceneFileParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/AbstractVec3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/AbstractVec3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Intersection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Intersection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Ray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Ray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Shape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Sphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Sphere.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Triangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Vector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/geometry/Vector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/imaging/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/imaging/Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/imaging/ImageWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/imaging/ImageWriter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/lighting/AbstractLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/lighting/AbstractLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/lighting/DirectionalLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/lighting/DirectionalLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/lighting/PointLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/lighting/PointLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/parsing/SceneFileParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/parsing/SceneFileParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/Camera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/ImageRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/ImageRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/Orthonormal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/Orthonormal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/RayTracer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/RayTracer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/raytracer/raytracer/Scene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/raytracer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/raytracer-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-fr.raytracer.geometry.PointTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-fr.raytracer.geometry.RayTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-fr.raytracer.geometry.SphereTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-fr.raytracer.geometry.TriangleTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-fr.raytracer.geometry.VectorTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-fr.raytracer.imaging.ColorTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-fr.raytracer.lighting.LightTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-fr.raytracer.raytracer.CameraTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-fr.raytracer.raytracer.SceneTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/fr.raytracer.geometry.PointTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/fr.raytracer.geometry.RayTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/fr.raytracer.geometry.SphereTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/fr.raytracer.geometry.TriangleTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/fr.raytracer.geometry.VectorTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/fr.raytracer.imaging.ColorTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/fr.raytracer.lighting.LightTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/fr.raytracer.raytracer.CameraTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/fr.raytracer.raytracer.SceneTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/raytracer/geometry/PointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/raytracer/geometry/PointTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/raytracer/geometry/TriangleTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/raytracer/geometry/TriangleTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/raytracer/imaging/ColorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/raytracer/imaging/ColorTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="36ZmT75XugZH1bAsTwLOpWyayM9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27d409d8-52e7-4b82-b3dd-712a8a846bfa" name="Changes" comment="" />
+      <created>1765222472577</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765222472577</updated>
+      <workItem from="1765222473787" duration="611000" />
+    </task>
+    <servers />
+  </component>
+</project>

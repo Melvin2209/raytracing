@@ -1,8 +1,10 @@
 package fr.raytracer.parsing;
 
+import fr.raytracer.geometry.Plane;
 import fr.raytracer.geometry.Point;
 import fr.raytracer.geometry.Sphere;
 import fr.raytracer.geometry.Triangle;
+import fr.raytracer.geometry.Vector;
 import fr.raytracer.imaging.Color;
 import fr.raytracer.lighting.DirectionalLight;
 import fr.raytracer.lighting.PointLight;
@@ -186,13 +188,45 @@ public class SceneFileParser {
                     break;
                     
                 case "plane":
-                    // Plane implementation (bonus)
+                    // plane px py pz nx ny nz
+                    if (parts.length >= 7) {
+                        Point planePoint = new Point(
+                            Double.parseDouble(parts[1]),
+                            Double.parseDouble(parts[2]),
+                            Double.parseDouble(parts[3])
+                        );
+                        Vector planeNormal = new Vector(
+                            Double.parseDouble(parts[4]),
+                            Double.parseDouble(parts[5]),
+                            Double.parseDouble(parts[6])
+                        );
+                        Plane plane = new Plane(
+                            planePoint,
+                            planeNormal,
+                            currentDiffuse,
+                            currentSpecular,
+                            currentShininess
+                        );
+                        if (scene != null) {
+                            scene.addShape(plane);
+                        }
+                    }
                     break;
                     
                 case "maxdepth":
                     // Handled in main
                     break;
             }
+        }
+        
+        // Si aucun output n'est spécifié, générer un nom basé sur le fichier de scène
+        if (scene != null && scene.getOutput().equals("output.png")) {
+            String baseName = Paths.get(filename).getFileName().toString();
+            // Enlever l'extension .scene
+            if (baseName.endsWith(".scene")) {
+                baseName = baseName.substring(0, baseName.length() - 6);
+            }
+            scene.setOutput(baseName + ".png");
         }
         
         return scene;

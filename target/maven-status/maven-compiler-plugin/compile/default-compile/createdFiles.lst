@@ -11,6 +11,7 @@ fr/raytracer/geometry/Vector.class
 imgcompare/Main.class
 fr/raytracer/raytracer/Camera.class
 fr/raytracer/geometry/Shape.class
+fr/raytracer/geometry/Plane.class
 fr/raytracer/Main.class
 fr/raytracer/raytracer/RayTracer.class
 fr/raytracer/geometry/Point.class
