@@ -62,6 +62,12 @@ public class SceneFileParser {
                         scene.setOutput(parts[1]);
                     }
                     break;
+                
+                case "reflection":
+                    if (scene != null && parts.length > 1) {
+                        scene.setReflectionEnabled(parts[1].equalsIgnoreCase("on") || parts[1].equalsIgnoreCase("true"));
+                    }
+                    break;
                     
                 case "camera":
                     Camera camera = parseCamera(parts);

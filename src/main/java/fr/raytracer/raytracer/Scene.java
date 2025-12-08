@@ -26,6 +26,8 @@ public class Scene {
     private List<AbstractLight> lights = new ArrayList<>();
     /** Liste des formes. */
     private List<Shape> shapes = new ArrayList<>();
+    /** Activation des réflexions. */
+    private boolean reflectionEnabled = false;
 
     /**
      * Crée une scène.
@@ -53,6 +55,8 @@ public class Scene {
     public List<AbstractLight> getLights() { return lights; }
     /** @return la liste des formes */
     public List<Shape> getShapes() { return shapes; }
+    /** @return si les réflexions sont activées */
+    public boolean isReflectionEnabled() { return reflectionEnabled; }
 
     /**
      * Définit le fichier de sortie.
@@ -65,6 +69,12 @@ public class Scene {
      * @param ambient la couleur
      */
     public void setAmbient(Color ambient) { this.ambient = ambient; }
+
+    /**
+     * Active ou désactive les réflexions.
+     * @param enabled true pour activer
+     */
+    public void setReflectionEnabled(boolean enabled) { this.reflectionEnabled = enabled; }
 
     /**
      * Ajoute une lumière à la scène.

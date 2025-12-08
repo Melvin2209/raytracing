@@ -3,6 +3,7 @@
 size 640 480
 camera 10 15 10 0 5 -1 0 1 0 45
 output dragon3.png
+reflection on
 
 diffuse 0.4 0.1 0.1
 ambient 0.0 0.0 0.0

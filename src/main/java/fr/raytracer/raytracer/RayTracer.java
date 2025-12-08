@@ -101,16 +101,12 @@ public class RayTracer {
             }
         }
         
-        if (depth < maxDepth) {
+        // Réflexions activées uniquement si le paramètre reflection est à on
+        if (scene.isReflectionEnabled() && depth < maxDepth) {
             Color specular = intersection.getShape().getSpecular();
-            Color enhancedSpecular = new Color(
-                Math.min(1.0, specular.getR() * 1.5),
-                Math.min(1.0, specular.getG() * 1.5),
-                Math.min(1.0, specular.getB() * 1.5)
-            );
-            if (enhancedSpecular.getR() > 0 || enhancedSpecular.getG() > 0 || enhancedSpecular.getB() > 0) {
+            if (specular.getR() > 0 || specular.getG() > 0 || specular.getB() > 0) {
                 Color reflectionColor = computeReflection(intersection, ray, depth);
-                finalColor = finalColor.add(enhancedSpecular.multiply(reflectionColor));
+                finalColor = finalColor.add(specular.multiply(reflectionColor));
             }
         }
         
