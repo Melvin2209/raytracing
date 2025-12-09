@@ -35,6 +35,6 @@ L'image sera générée dans le fichier indiqué dans la scène (ex : `dragon3.p
 - `target/` : fichiers compilés et images générées
 
 ## Auteur
-Melvin Dupuis
+Melvin Dupuis - Léo Makongue
 
 Projet académique - 2025
